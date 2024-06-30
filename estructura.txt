@@ -1,0 +1,1992 @@
+.
+├── CODE_OF_CONDUCT.md
+├── CONTRIBUTING.md
+├── LICENSE
+├── Makefile
+├── README.PT.md
+├── README.md
+├── README.zh_CN.md
+├── deploy
+│   ├── docker-compose.override.yml
+│   ├── docker-compose.with_tests.yml
+│   ├── docker-compose.yml
+│   ├── prometheus.yml
+│   └── startup-backend.sh
+├── docker
+│   ├── build_and_push.Dockerfile
+│   ├── build_and_push_backend.Dockerfile
+│   ├── build_and_push_base.Dockerfile
+│   ├── cdk-docker-compose.yml
+│   ├── cdk.Dockerfile
+│   ├── container-cmd-cdk.sh
+│   ├── dev.Dockerfile
+│   ├── frontend
+│   │   ├── build_and_push_frontend.Dockerfile
+│   │   ├── nginx.conf
+│   │   └── start-nginx.sh
+│   ├── render.Dockerfile
+│   └── render.pre-release.Dockerfile
+├── docker_example
+│   ├── Dockerfile
+│   ├── README.md
+│   ├── docker-compose.yml
+│   ├── pre.Dockerfile
+│   └── pre.docker-compose.yml
+├── docs
+│   ├── README.md
+│   ├── babel.config.js
+│   ├── docs
+│   │   ├── administration
+│   │   │   ├── api.mdx
+│   │   │   ├── chat-widget.mdx
+│   │   │   ├── cli.mdx
+│   │   │   ├── collections-projects.mdx
+│   │   │   ├── global-env.mdx
+│   │   │   ├── login.mdx
+│   │   │   ├── logs.mdx
+│   │   │   ├── memories.mdx
+│   │   │   ├── playground.mdx
+│   │   │   ├── prompt-customization.mdx
+│   │   │   └── settings.mdx
+│   │   ├── components
+│   │   │   ├── agents.mdx
+│   │   │   ├── chains.mdx
+│   │   │   ├── custom.mdx
+│   │   │   ├── data.mdx
+│   │   │   ├── embeddings.mdx
+│   │   │   ├── experimental.mdx
+│   │   │   ├── helpers.mdx
+│   │   │   ├── inputs-and-outputs.mdx
+│   │   │   ├── loaders.mdx
+│   │   │   ├── memories.mdx
+│   │   │   ├── model_specs.mdx
+│   │   │   ├── models.mdx
+│   │   │   ├── retrievers.mdx
+│   │   │   ├── text-and-record.mdx
+│   │   │   ├── text-splitters.mdx
+│   │   │   ├── toolkits.mdx
+│   │   │   ├── tools.mdx
+│   │   │   ├── utilities.mdx
+│   │   │   └── vector-stores.mdx
+│   │   ├── contributing
+│   │   │   ├── community.mdx
+│   │   │   ├── contribute-component.mdx
+│   │   │   ├── github-issues.mdx
+│   │   │   ├── how-contribute.mdx
+│   │   │   └── telemetry.mdx
+│   │   ├── deployment
+│   │   │   ├── backend-only.mdx
+│   │   │   ├── docker.mdx
+│   │   │   ├── gcp-deployment.mdx
+│   │   │   └── kubernetes.md
+│   │   ├── examples
+│   │   │   ├── chat-memory.mdx
+│   │   │   ├── combine-text.mdx
+│   │   │   ├── create-record.mdx
+│   │   │   ├── pass.mdx
+│   │   │   ├── store-message.mdx
+│   │   │   ├── sub-flow.mdx
+│   │   │   └── text-operator.mdx
+│   │   ├── getting-started
+│   │   │   ├── install-langflow.mdx
+│   │   │   ├── new-to-llms.mdx
+│   │   │   ├── possible-installation-issues.mdx
+│   │   │   ├── quickstart.mdx
+│   │   │   └── workspace.mdx
+│   │   ├── index.mdx
+│   │   ├── integrations
+│   │   │   ├── langsmith
+│   │   │   │   └── intro.mdx
+│   │   │   └── notion
+│   │   │       ├── add-content-to-page.md
+│   │   │       ├── intro.md
+│   │   │       ├── list-database-properties.md
+│   │   │       ├── list-pages.md
+│   │   │       ├── list-users.md
+│   │   │       ├── page-content-viewer.md
+│   │   │       ├── page-create.md
+│   │   │       ├── page-update.md
+│   │   │       ├── search.md
+│   │   │       └── setup.md
+│   │   ├── migration
+│   │   │   ├── compatibility.mdx
+│   │   │   └── migrating-to-one-point-zero.mdx
+│   │   ├── starter-projects
+│   │   │   ├── basic-prompting.mdx
+│   │   │   ├── blog-writer.mdx
+│   │   │   ├── document-qa.mdx
+│   │   │   ├── memory-chatbot.mdx
+│   │   │   └── vector-store-rag.mdx
+│   │   ├── tutorials
+│   │   │   ├── chatprompttemplate_guide.mdx
+│   │   │   ├── custom_components.mdx
+│   │   │   ├── loading_document.mdx
+│   │   │   └── rag-with-astradb.mdx
+│   │   └── whats-new
+│   │       └── a-new-chapter-langflow.mdx
+│   ├── docusaurus.config.js
+│   ├── index.d.ts
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── plugins
+│   │   └── index.js
+│   ├── sidebars.js
+│   ├── spell_add.sh
+│   ├── spell_check.sh
+│   ├── src
+│   │   ├── css
+│   │   │   └── custom.css
+│   │   ├── pages
+│   │   │   ├── index.module.css
+│   │   │   └── markdown-page.md
+│   │   └── theme
+│   │       ├── DownloadableJsonFile.js
+│   │       ├── Footer.js
+│   │       ├── SearchBar.js
+│   │       └── ZoomableImage.js
+│   ├── static
+│   │   ├── CNAME
+│   │   ├── data
+│   │   │   ├── AstraDB-RAG-Flows.json
+│   │   │   └── organizations-100.csv
+│   │   ├── img
+│   │   │   ├── Logspace.png
+│   │   │   ├── add-component-to-store.png
+│   │   │   ├── add-new-variable.png
+│   │   │   ├── admin-page.png
+│   │   │   ├── api-key.png
+│   │   │   ├── api-window.png
+│   │   │   ├── astra-configure-deployment.png
+│   │   │   ├── astra-create-database.png
+│   │   │   ├── astra-generate-token.png
+│   │   │   ├── astra-ingestion-fields.png
+│   │   │   ├── astra-ingestion-flow-dark.png
+│   │   │   ├── astra-ingestion-flow.png
+│   │   │   ├── astra-ingestion-run.png
+│   │   │   ├── astra-rag-flow-dark.png
+│   │   │   ├── astra-rag-flow-interaction-panel-interaction.png
+│   │   │   ├── astra-rag-flow-interaction-panel.png
+│   │   │   ├── astra-rag-flow-run.png
+│   │   │   ├── astra-rag-flow.png
+│   │   │   ├── basic-chat.png
+│   │   │   ├── basic-prompting.png
+│   │   │   ├── blog-writer.png
+│   │   │   ├── buffer-memory.png
+│   │   │   ├── chain.png
+│   │   │   ├── chat-input-dark.png
+│   │   │   ├── chat-input-expanded.png
+│   │   │   ├── chat-input-light.png
+│   │   │   ├── chat-input-with-menu.png
+│   │   │   ├── chat-input.png
+│   │   │   ├── chat-memory-component.png
+│   │   │   ├── chat_interface.png
+│   │   │   ├── chat_interface2.png
+│   │   │   ├── chat_interface3.png
+│   │   │   ├── chat_interface4.png
+│   │   │   ├── community-examples.png
+│   │   │   ├── component-freeze.jpeg
+│   │   │   ├── component-menu.png
+│   │   │   ├── component-update.png
+│   │   │   ├── create-variable-window.png
+│   │   │   ├── csv-loader.png
+│   │   │   ├── custom-endpoint.webp
+│   │   │   ├── document-qa.png
+│   │   │   ├── document_processor.png
+│   │   │   ├── document_processor_code.png
+│   │   │   ├── drag-and-drop-canvas.png
+│   │   │   ├── drag-and-drop-flow.png
+│   │   │   ├── duplicate-space.png
+│   │   │   ├── favicon.ico
+│   │   │   ├── flow-composition.webp
+│   │   │   ├── flow_runner.png
+│   │   │   ├── flow_runner_code.png
+│   │   │   ├── global-env.png
+│   │   │   ├── hero.png
+│   │   │   ├── hugging-face.png
+│   │   │   ├── inspect-output.png
+│   │   │   ├── interaction-panel-text-input.png
+│   │   │   ├── interaction-panel-with-chat-input.png
+│   │   │   ├── langflow-1-0.png
+│   │   │   ├── langflow_canvas.png
+│   │   │   ├── langsmith-flow.png
+│   │   │   ├── langsmith-trace.png
+│   │   │   ├── logo.svg
+│   │   │   ├── logs-monitoring.webp
+│   │   │   ├── memory-chatbot.png
+│   │   │   ├── menu-options.png
+│   │   │   ├── midjourney-prompt-chain.png
+│   │   │   ├── multi-modal.png
+│   │   │   ├── multiple-outputs.png
+│   │   │   ├── multiple-vectorstores.png
+│   │   │   ├── multiple_outputs.webp
+│   │   │   ├── my-account.png
+│   │   │   ├── my-collection.png
+│   │   │   ├── notion
+│   │   │   │   ├── AddContentToPage_flow_example.png
+│   │   │   │   ├── AddContentToPage_flow_example_dark.png
+│   │   │   │   ├── NotionDatabaseProperties_flow_example.png
+│   │   │   │   ├── NotionDatabaseProperties_flow_example_dark.png
+│   │   │   │   ├── NotionListPages_flow_example.png
+│   │   │   │   ├── NotionListPages_flow_example_dark.png
+│   │   │   │   ├── NotionPageContent_flow_example.png
+│   │   │   │   ├── NotionPageContent_flow_example_dark.png
+│   │   │   │   ├── NotionPageCreator_flow_example.png
+│   │   │   │   ├── NotionPageCreator_flow_example_dark.png
+│   │   │   │   ├── NotionPageUpdate_flow_example.png
+│   │   │   │   ├── NotionPageUpdate_flow_example_dark.png
+│   │   │   │   ├── NotionSearch_flow_example.png
+│   │   │   │   ├── NotionSearch_flow_example_dark.png
+│   │   │   │   ├── NotionUserList_flow_example.png
+│   │   │   │   ├── NotionUserList_flow_example_dark.png
+│   │   │   │   ├── notion_bundle.jpg
+│   │   │   │   ├── notion_components_bundle.png
+│   │   │   │   └── notion_components_bundle_dark.png
+│   │   │   ├── ollama-gv.png
+│   │   │   ├── overall.png
+│   │   │   ├── playground-chat.png
+│   │   │   ├── playground-logs.png
+│   │   │   ├── playground-memories.png
+│   │   │   ├── playground.png
+│   │   │   ├── profile-settings.png
+│   │   │   ├── project-options-menu-dark.png
+│   │   │   ├── project-options-menu-light.png
+│   │   │   ├── prompt-with-template.png
+│   │   │   ├── prompt.png
+│   │   │   ├── prompt_customization.png
+│   │   │   ├── prompt_customization2.png
+│   │   │   ├── prompt_customization3.png
+│   │   │   ├── prompt_customization4.png
+│   │   │   ├── prompt_customization5.png
+│   │   │   ├── python-function.png
+│   │   │   ├── quickstart.png
+│   │   │   ├── runnable-executor.png
+│   │   │   ├── searchapi-tool.png
+│   │   │   ├── serp-api-tool.png
+│   │   │   ├── sign-up.png
+│   │   │   ├── single-compenent.png
+│   │   │   ├── single-component-dark.png
+│   │   │   ├── single-component-light.png
+│   │   │   ├── single-component.png
+│   │   │   ├── text-input-expanded.png
+│   │   │   ├── text-input.png
+│   │   │   ├── topnav.png
+│   │   │   ├── vector-store-rag.png
+│   │   │   ├── welcome-to-langflow.png
+│   │   │   ├── widget-code.png
+│   │   │   └── widget-sidebar.png
+│   │   ├── json_files
+│   │   │   ├── Basic_Chat.json
+│   │   │   ├── Buffer_Memory.json
+│   │   │   ├── CSV_Loader.json
+│   │   │   ├── JSON_Agent.json
+│   │   │   ├── MidJourney_Prompt_Chain.json
+│   │   │   ├── Multiple_Vector_Stores.json
+│   │   │   ├── Notion_Components_bundle.json
+│   │   │   ├── Python_Function.json
+│   │   │   ├── SearchApi_Tool.json
+│   │   │   └── SerpAPI_Tool.json
+│   │   ├── logos
+│   │   │   ├── botmessage.svg
+│   │   │   ├── discordDark.svg
+│   │   │   ├── discordLight.svg
+│   │   │   ├── gitDark.svg
+│   │   │   ├── gitLight.svg
+│   │   │   ├── greencheck.svg
+│   │   │   ├── playbutton.svg
+│   │   │   ├── xDark.svg
+│   │   │   └── xLight.svg
+│   │   └── videos
+│   │       ├── combine_text.mp4
+│   │       ├── langflow_global_variables.mp4
+│   │       ├── langflow_playground.mp4
+│   │       └── pass.mp4
+│   └── tailwind.config.js
+├── eslint.config.js
+├── estructura.pdf
+├── estructura.txt
+├── package.json
+├── poetry.lock
+├── pyproject.toml
+├── render.yaml
+├── requirements.txt
+├── scripts
+│   ├── aws
+│   │   ├── README.ja.md
+│   │   ├── README.md
+│   │   ├── bin
+│   │   │   └── cdk.ts
+│   │   ├── cdk.json
+│   │   ├── delete-docker-images.sh
+│   │   ├── delete-resources.sh
+│   │   ├── img
+│   │   │   ├── langflow-archi.png
+│   │   │   ├── langflow-cfn.png
+│   │   │   ├── langflow-cloud9-en.png
+│   │   │   └── langflow-signin.png
+│   │   ├── jest.config.js
+│   │   ├── lib
+│   │   │   ├── cdk-stack.ts
+│   │   │   └── construct
+│   │   │       ├── backend.ts
+│   │   │       ├── db.ts
+│   │   │       ├── ecr.ts
+│   │   │       ├── frontend.ts
+│   │   │       ├── iam.ts
+│   │   │       ├── index.ts
+│   │   │       ├── kendra.ts
+│   │   │       └── network.ts
+│   │   ├── package-lock.json
+│   │   └── test
+│   │       └── cdk.test.ts
+│   ├── factory_restart_space.py
+│   ├── gcp
+│   │   ├── GCP_DEPLOYMENT.md
+│   │   ├── deploy_langflow_gcp.sh
+│   │   ├── deploy_langflow_gcp_spot.sh
+│   │   ├── walkthroughtutorial.md
+│   │   └── walkthroughtutorial_spot.md
+│   ├── setup
+│   │   ├── setup_env.sh
+│   │   └── update_poetry.sh
+│   └── update_dependencies.py
+├── src
+│   ├── backend
+│   │   ├── Dockerfile
+│   │   ├── base
+│   │   │   ├── README.md
+│   │   │   ├── langflow
+│   │   │   │   ├── __main__.py
+│   │   │   │   ├── alembic
+│   │   │   │   │   ├── README
+│   │   │   │   │   ├── env.py
+│   │   │   │   │   ├── script.py.mako
+│   │   │   │   │   └── versions
+│   │   │   │   │       ├── 006b3990db50_add_unique_constraints.py
+│   │   │   │   │       ├── 012fb73ac359_add_folder_table.py
+│   │   │   │   │       ├── 0b8757876a7c_.py
+│   │   │   │   │       ├── 1a110b568907_replace_credential_table_with_variable.py
+│   │   │   │   │       ├── 1c79524817ed_add_unique_constraints_per_user_in_.py
+│   │   │   │   │       ├── 1ef9c4f3765d_.py
+│   │   │   │   │       ├── 1f4d6df60295_add_default_fields_column.py
+│   │   │   │   │       ├── 260dbcc8b680_adds_tables.py
+│   │   │   │   │       ├── 29fe8f1f806b_add_missing_index.py
+│   │   │   │   │       ├── 2ac71eb9c3ae_adds_credential_table.py
+│   │   │   │   │       ├── 3bb0ddf32dfb_add_unique_constraints_per_user_in_flow_.py
+│   │   │   │   │       ├── 4e5980a44eaa_fix_date_times_again.py
+│   │   │   │   │       ├── 58b28437a398_modify_nullable.py
+│   │   │   │   │       ├── 631faacf5da2_add_webhook_columns.py
+│   │   │   │   │       ├── 63b9c451fd30_add_icon_and_icon_bg_color_to_flow.py
+│   │   │   │   │       ├── 67cc006d50bf_add_profile_image_column.py
+│   │   │   │   │       ├── 6e7b581b5648_fix_nullable.py
+│   │   │   │   │       ├── 7843803a87b5_store_updates.py
+│   │   │   │   │       ├── 79e675cb6752_change_datetime_type.py
+│   │   │   │   │       ├── 7d2162acc8b2_adds_updated_at_and_folder_cols.py
+│   │   │   │   │       ├── a72f5cf9c2f9_add_endpoint_name_col.py
+│   │   │   │   │       ├── b2fa308044b5_add_unique_constraints.py
+│   │   │   │   │       ├── bc2f01c40e4a_new_fixes.py
+│   │   │   │   │       ├── c153816fd85f_set_name_and_value_to_not_nullable.py
+│   │   │   │   │       ├── e3bc869fa272_fix_nullable.py
+│   │   │   │   │       ├── eb5866d51fd2_change_columns_to_be_nullable.py
+│   │   │   │   │       ├── f5ee9749d1a6_user_id_can_be_null_in_flow.py
+│   │   │   │   │       └── fd531f8868b1_fix_credential_table.py
+│   │   │   │   ├── alembic.ini
+│   │   │   │   ├── api
+│   │   │   │   │   ├── __init__.py
+│   │   │   │   │   ├── router.py
+│   │   │   │   │   ├── utils.py
+│   │   │   │   │   └── v1
+│   │   │   │   │       ├── __init__.py
+│   │   │   │   │       ├── api_key.py
+│   │   │   │   │       ├── base.py
+│   │   │   │   │       ├── callback.py
+│   │   │   │   │       ├── chat.py
+│   │   │   │   │       ├── endpoints.py
+│   │   │   │   │       ├── files.py
+│   │   │   │   │       ├── flows.py
+│   │   │   │   │       ├── folders.py
+│   │   │   │   │       ├── login.py
+│   │   │   │   │       ├── monitor.py
+│   │   │   │   │       ├── schemas.py
+│   │   │   │   │       ├── store.py
+│   │   │   │   │       ├── users.py
+│   │   │   │   │       ├── validate.py
+│   │   │   │   │       └── variable.py
+│   │   │   │   ├── base
+│   │   │   │   │   ├── __init__.py
+│   │   │   │   │   ├── agents
+│   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   ├── agent.py
+│   │   │   │   │   │   ├── default_prompts.py
+│   │   │   │   │   │   └── utils.py
+│   │   │   │   │   ├── constants.py
+│   │   │   │   │   ├── curl
+│   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   └── parse.py
+│   │   │   │   │   ├── data
+│   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   └── utils.py
+│   │   │   │   │   ├── embeddings
+│   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   └── model.py
+│   │   │   │   │   ├── flow_processing
+│   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   └── utils.py
+│   │   │   │   │   ├── io
+│   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   ├── chat.py
+│   │   │   │   │   │   └── text.py
+│   │   │   │   │   ├── memory
+│   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   └── memory.py
+│   │   │   │   │   ├── models
+│   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   ├── groq_constants.py
+│   │   │   │   │   │   ├── model.py
+│   │   │   │   │   │   └── openai_constants.py
+│   │   │   │   │   ├── prompts
+│   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   ├── api_utils.py
+│   │   │   │   │   │   └── utils.py
+│   │   │   │   │   ├── tools
+│   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   ├── base.py
+│   │   │   │   │   │   └── flow_tool.py
+│   │   │   │   │   └── vectorstores
+│   │   │   │   │       ├── __init__.py
+│   │   │   │   │       ├── model.py
+│   │   │   │   │       └── utils.py
+│   │   │   │   ├── components
+│   │   │   │   │   ├── __init__.py
+│   │   │   │   │   ├── agents
+│   │   │   │   │   │   ├── CSVAgent.py
+│   │   │   │   │   │   ├── JsonAgent.py
+│   │   │   │   │   │   ├── SQLAgent.py
+│   │   │   │   │   │   ├── ToolCallingAgent.py
+│   │   │   │   │   │   ├── VectorStoreAgent.py
+│   │   │   │   │   │   ├── VectorStoreRouterAgent.py
+│   │   │   │   │   │   ├── XMLAgent.py
+│   │   │   │   │   │   └── __init__.py
+│   │   │   │   │   ├── chains
+│   │   │   │   │   │   ├── ConversationChain.py
+│   │   │   │   │   │   ├── LLMChain.py
+│   │   │   │   │   │   ├── LLMCheckerChain.py
+│   │   │   │   │   │   ├── LLMMathChain.py
+│   │   │   │   │   │   ├── RetrievalQA.py
+│   │   │   │   │   │   ├── RetrievalQAWithSourcesChain.py
+│   │   │   │   │   │   ├── SQLGenerator.py
+│   │   │   │   │   │   └── __init__.py
+│   │   │   │   │   ├── data
+│   │   │   │   │   │   ├── APIRequest.py
+│   │   │   │   │   │   ├── Directory.py
+│   │   │   │   │   │   ├── File.py
+│   │   │   │   │   │   ├── URL.py
+│   │   │   │   │   │   ├── Webhook.py
+│   │   │   │   │   │   └── __init__.py
+│   │   │   │   │   ├── deactivated
+│   │   │   │   │   │   ├── AgentComponent.py
+│   │   │   │   │   │   ├── ChatLiteLLMModel.py
+│   │   │   │   │   │   ├── CodeBlockExtractor.py
+│   │   │   │   │   │   ├── DocumentsToData.py
+│   │   │   │   │   │   ├── Embed.py
+│   │   │   │   │   │   ├── ExtractKeyFromData.py
+│   │   │   │   │   │   ├── ListFlows.py
+│   │   │   │   │   │   ├── MergeData.py
+│   │   │   │   │   │   ├── Message.py
+│   │   │   │   │   │   ├── SelectivePassThrough.py
+│   │   │   │   │   │   ├── ShouldRunNext.py
+│   │   │   │   │   │   ├── SplitText.py
+│   │   │   │   │   │   ├── StoreMessage.py
+│   │   │   │   │   │   ├── SubFlow.py
+│   │   │   │   │   │   └── __init__.py
+│   │   │   │   │   ├── documentloaders
+│   │   │   │   │   │   └── __init__.py
+│   │   │   │   │   ├── embeddings
+│   │   │   │   │   │   ├── AmazonBedrockEmbeddings.py
+│   │   │   │   │   │   ├── AstraVectorize.py
+│   │   │   │   │   │   ├── AzureOpenAIEmbeddings.py
+│   │   │   │   │   │   ├── CohereEmbeddings.py
+│   │   │   │   │   │   ├── HuggingFaceEmbeddings.py
+│   │   │   │   │   │   ├── HuggingFaceInferenceAPIEmbeddings.py
+│   │   │   │   │   │   ├── MistalAIEmbeddings.py
+│   │   │   │   │   │   ├── OllamaEmbeddings.py
+│   │   │   │   │   │   ├── OpenAIEmbeddings.py
+│   │   │   │   │   │   ├── VertexAIEmbeddings.py
+│   │   │   │   │   │   └── __init__.py
+│   │   │   │   │   ├── helpers
+│   │   │   │   │   │   ├── CombineText.py
+│   │   │   │   │   │   ├── CustomComponent.py
+│   │   │   │   │   │   ├── FilterData.py
+│   │   │   │   │   │   ├── IDGenerator.py
+│   │   │   │   │   │   ├── Memory.py
+│   │   │   │   │   │   ├── MergeData.py
+│   │   │   │   │   │   ├── ParseData.py
+│   │   │   │   │   │   ├── SplitText.py
+│   │   │   │   │   │   ├── StoreMessage.py
+│   │   │   │   │   │   └── __init__.py
+│   │   │   │   │   ├── inputs
+│   │   │   │   │   │   ├── ChatInput.py
+│   │   │   │   │   │   ├── TextInput.py
+│   │   │   │   │   │   └── __init__.py
+│   │   │   │   │   ├── langchain_utilities
+│   │   │   │   │   │   ├── BingSearchAPIWrapper.py
+│   │   │   │   │   │   ├── FirecrawlCrawlApi.py
+│   │   │   │   │   │   ├── FirecrawlScrapeApi.py
+│   │   │   │   │   │   ├── GoogleSearchAPIWrapper.py
+│   │   │   │   │   │   ├── GoogleSerperAPIWrapper.py
+│   │   │   │   │   │   ├── JSONDocumentBuilder.py
+│   │   │   │   │   │   ├── SQLDatabase.py
+│   │   │   │   │   │   ├── SearchApi.py
+│   │   │   │   │   │   ├── SearxSearchWrapper.py
+│   │   │   │   │   │   ├── SerpAPIWrapper.py
+│   │   │   │   │   │   ├── WikipediaAPIWrapper.py
+│   │   │   │   │   │   └── WolframAlphaAPIWrapper.py
+│   │   │   │   │   ├── memories
+│   │   │   │   │   │   ├── AstraDBMessageReader.py
+│   │   │   │   │   │   ├── AstraDBMessageWriter.py
+│   │   │   │   │   │   ├── CassandraMessageReader.py
+│   │   │   │   │   │   ├── CassandraMessageWriter.py
+│   │   │   │   │   │   ├── ZepMessageReader.py
+│   │   │   │   │   │   ├── ZepMessageWriter.py
+│   │   │   │   │   │   └── __init__.py
+│   │   │   │   │   ├── models
+│   │   │   │   │   │   ├── AmazonBedrockModel.py
+│   │   │   │   │   │   ├── AnthropicModel.py
+│   │   │   │   │   │   ├── AzureOpenAIModel.py
+│   │   │   │   │   │   ├── BaiduQianfanChatModel.py
+│   │   │   │   │   │   ├── CohereModel.py
+│   │   │   │   │   │   ├── GoogleGenerativeAIModel.py
+│   │   │   │   │   │   ├── GroqModel.py
+│   │   │   │   │   │   ├── HuggingFaceModel.py
+│   │   │   │   │   │   ├── MistralModel.py
+│   │   │   │   │   │   ├── OllamaModel.py
+│   │   │   │   │   │   ├── OpenAIModel.py
+│   │   │   │   │   │   ├── VertexAiModel.py
+│   │   │   │   │   │   └── __init__.py
+│   │   │   │   │   ├── outputs
+│   │   │   │   │   │   ├── ChatOutput.py
+│   │   │   │   │   │   ├── TextOutput.py
+│   │   │   │   │   │   └── __init__.py
+│   │   │   │   │   ├── prompts
+│   │   │   │   │   │   ├── Prompt.py
+│   │   │   │   │   │   └── __init__.py
+│   │   │   │   │   ├── prototypes
+│   │   │   │   │   │   ├── ConditionalRouter.py
+│   │   │   │   │   │   ├── CreateData.py
+│   │   │   │   │   │   ├── FlowTool.py
+│   │   │   │   │   │   ├── Listen.py
+│   │   │   │   │   │   ├── Notify.py
+│   │   │   │   │   │   ├── Pass.py
+│   │   │   │   │   │   ├── PythonFunction.py
+│   │   │   │   │   │   ├── RunFlow.py
+│   │   │   │   │   │   ├── RunnableExecutor.py
+│   │   │   │   │   │   ├── SQLExecutor.py
+│   │   │   │   │   │   ├── SubFlow.py
+│   │   │   │   │   │   ├── UpdateData.py
+│   │   │   │   │   │   └── __init__.py
+│   │   │   │   │   ├── retrievers
+│   │   │   │   │   │   ├── AmazonKendra.py
+│   │   │   │   │   │   ├── CohereRerank.py
+│   │   │   │   │   │   ├── MetalRetriever.py
+│   │   │   │   │   │   ├── MultiQueryRetriever.py
+│   │   │   │   │   │   ├── SelfQueryRetriever.py
+│   │   │   │   │   │   ├── VectaraSelfQueryRetriver.py
+│   │   │   │   │   │   ├── VectorStoreRetriever.py
+│   │   │   │   │   │   └── __init__.py
+│   │   │   │   │   ├── textsplitters
+│   │   │   │   │   │   ├── CharacterTextSplitter.py
+│   │   │   │   │   │   ├── LanguageRecursiveTextSplitter.py
+│   │   │   │   │   │   ├── RecursiveCharacterTextSplitter.py
+│   │   │   │   │   │   └── __init__.py
+│   │   │   │   │   ├── toolkits
+│   │   │   │   │   │   ├── JsonToolkit.py
+│   │   │   │   │   │   ├── Metaphor.py
+│   │   │   │   │   │   ├── OpenAPIToolkit.py
+│   │   │   │   │   │   ├── VectorStoreInfo.py
+│   │   │   │   │   │   ├── VectorStoreRouterToolkit.py
+│   │   │   │   │   │   ├── VectorStoreToolkit.py
+│   │   │   │   │   │   └── __init__.py
+│   │   │   │   │   ├── tools
+│   │   │   │   │   │   ├── PythonCodeStructuredTool.py
+│   │   │   │   │   │   ├── PythonREPLTool.py
+│   │   │   │   │   │   ├── RetrieverTool.py
+│   │   │   │   │   │   ├── SearchAPITool.py
+│   │   │   │   │   │   ├── SearchApi.py
+│   │   │   │   │   │   └── __init__.py
+│   │   │   │   │   └── vectorstores
+│   │   │   │   │       ├── AstraDB.py
+│   │   │   │   │       ├── Cassandra.py
+│   │   │   │   │       ├── Chroma.py
+│   │   │   │   │       ├── Couchbase.py
+│   │   │   │   │       ├── FAISS.py
+│   │   │   │   │       ├── MongoDBAtlasVector.py
+│   │   │   │   │       ├── Pinecone.py
+│   │   │   │   │       ├── Qdrant.py
+│   │   │   │   │       ├── Redis.py
+│   │   │   │   │       ├── SupabaseVectorStore.py
+│   │   │   │   │       ├── Upstash.py
+│   │   │   │   │       ├── Vectara.py
+│   │   │   │   │       ├── Weaviate.py
+│   │   │   │   │       ├── __init__.py
+│   │   │   │   │       └── pgvector.py
+│   │   │   │   ├── core
+│   │   │   │   │   ├── __init__.py
+│   │   │   │   │   ├── celery_app.py
+│   │   │   │   │   └── celeryconfig.py
+│   │   │   │   ├── custom
+│   │   │   │   │   ├── __init__.py
+│   │   │   │   │   ├── attributes.py
+│   │   │   │   │   ├── code_parser
+│   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   └── code_parser.py
+│   │   │   │   │   ├── custom_component
+│   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   ├── base_component.py
+│   │   │   │   │   │   ├── component.py
+│   │   │   │   │   │   └── custom_component.py
+│   │   │   │   │   ├── directory_reader
+│   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   ├── directory_reader.py
+│   │   │   │   │   │   └── utils.py
+│   │   │   │   │   ├── eval.py
+│   │   │   │   │   ├── schema.py
+│   │   │   │   │   └── utils.py
+│   │   │   │   ├── exceptions
+│   │   │   │   │   ├── __init__.py
+│   │   │   │   │   └── component.py
+│   │   │   │   ├── field_typing
+│   │   │   │   │   ├── __init__.py
+│   │   │   │   │   ├── constants.py
+│   │   │   │   │   └── range_spec.py
+│   │   │   │   ├── graph
+│   │   │   │   │   ├── __init__.py
+│   │   │   │   │   ├── edge
+│   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   ├── base.py
+│   │   │   │   │   │   ├── schema.py
+│   │   │   │   │   │   └── utils.py
+│   │   │   │   │   ├── graph
+│   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   ├── base.py
+│   │   │   │   │   │   ├── constants.py
+│   │   │   │   │   │   ├── runnable_vertices_manager.py
+│   │   │   │   │   │   ├── state_manager.py
+│   │   │   │   │   │   └── utils.py
+│   │   │   │   │   ├── schema.py
+│   │   │   │   │   ├── utils.py
+│   │   │   │   │   └── vertex
+│   │   │   │   │       ├── __init__.py
+│   │   │   │   │       ├── base.py
+│   │   │   │   │       ├── constants.py
+│   │   │   │   │       ├── types.py
+│   │   │   │   │       └── utils.py
+│   │   │   │   ├── helpers
+│   │   │   │   │   ├── __init__.py
+│   │   │   │   │   ├── custom.py
+│   │   │   │   │   ├── data.py
+│   │   │   │   │   ├── flow.py
+│   │   │   │   │   └── folders.py
+│   │   │   │   ├── initial_setup
+│   │   │   │   │   ├── __init__.py
+│   │   │   │   │   ├── profile_pictures
+│   │   │   │   │   │   ├── People
+│   │   │   │   │   │   │   ├── People Avatar-01-01.svg
+│   │   │   │   │   │   │   ├── People Avatar-01-02.svg
+│   │   │   │   │   │   │   ├── People Avatar-01-03.svg
+│   │   │   │   │   │   │   ├── People Avatar-01-04.svg
+│   │   │   │   │   │   │   ├── People Avatar-01-05.svg
+│   │   │   │   │   │   │   ├── People Avatar-01-06.svg
+│   │   │   │   │   │   │   ├── People Avatar-01-07.svg
+│   │   │   │   │   │   │   ├── People Avatar-01-08.svg
+│   │   │   │   │   │   │   ├── People Avatar-01-09.svg
+│   │   │   │   │   │   │   ├── People Avatar-01-10.svg
+│   │   │   │   │   │   │   ├── People Avatar-01-11.svg
+│   │   │   │   │   │   │   ├── People Avatar-01-12.svg
+│   │   │   │   │   │   │   ├── People Avatar-01-13.svg
+│   │   │   │   │   │   │   ├── People Avatar-01-14.svg
+│   │   │   │   │   │   │   ├── People Avatar-01-15.svg
+│   │   │   │   │   │   │   ├── People Avatar-01-16.svg
+│   │   │   │   │   │   │   ├── People Avatar-01-17.svg
+│   │   │   │   │   │   │   ├── People Avatar-01-18.svg
+│   │   │   │   │   │   │   ├── People Avatar-01-19.svg
+│   │   │   │   │   │   │   ├── People Avatar-01-20.svg
+│   │   │   │   │   │   │   ├── People Avatar-01-21.svg
+│   │   │   │   │   │   │   ├── People Avatar-01-22.svg
+│   │   │   │   │   │   │   ├── People Avatar-01-23.svg
+│   │   │   │   │   │   │   ├── People Avatar-01-24.svg
+│   │   │   │   │   │   │   ├── People Avatar-01-25.svg
+│   │   │   │   │   │   │   ├── People Avatar-01-26.svg
+│   │   │   │   │   │   │   ├── People Avatar-01-27.svg
+│   │   │   │   │   │   │   ├── People Avatar-02-01.svg
+│   │   │   │   │   │   │   ├── People Avatar-02-02.svg
+│   │   │   │   │   │   │   ├── People Avatar-02-03.svg
+│   │   │   │   │   │   │   ├── People Avatar-02-04.svg
+│   │   │   │   │   │   │   ├── People Avatar-02-05.svg
+│   │   │   │   │   │   │   ├── People Avatar-02-06.svg
+│   │   │   │   │   │   │   ├── People Avatar-02-07.svg
+│   │   │   │   │   │   │   ├── People Avatar-02-08.svg
+│   │   │   │   │   │   │   ├── People Avatar-02-09.svg
+│   │   │   │   │   │   │   ├── People Avatar-02-10.svg
+│   │   │   │   │   │   │   ├── People Avatar-02-11.svg
+│   │   │   │   │   │   │   ├── People Avatar-02-12.svg
+│   │   │   │   │   │   │   ├── People Avatar-02-13.svg
+│   │   │   │   │   │   │   ├── People Avatar-02-14.svg
+│   │   │   │   │   │   │   ├── People Avatar-02-15.svg
+│   │   │   │   │   │   │   ├── People Avatar-02-16.svg
+│   │   │   │   │   │   │   ├── People Avatar-02-17.svg
+│   │   │   │   │   │   │   ├── People Avatar-02-18.svg
+│   │   │   │   │   │   │   ├── People Avatar-02-19.svg
+│   │   │   │   │   │   │   ├── People Avatar-02-20.svg
+│   │   │   │   │   │   │   ├── People Avatar-02-21.svg
+│   │   │   │   │   │   │   ├── People Avatar-02-22.svg
+│   │   │   │   │   │   │   ├── People Avatar-02-23.svg
+│   │   │   │   │   │   │   ├── People Avatar-02-24.svg
+│   │   │   │   │   │   │   ├── People Avatar-02-25.svg
+│   │   │   │   │   │   │   ├── People Avatar-02-26.svg
+│   │   │   │   │   │   │   └── People Avatar-02-27.svg
+│   │   │   │   │   │   └── Space
+│   │   │   │   │   │       ├── 026-alien.svg
+│   │   │   │   │   │       ├── 027-satellite.svg
+│   │   │   │   │   │       ├── 028-alien.svg
+│   │   │   │   │   │       ├── 029-telescope.svg
+│   │   │   │   │   │       ├── 030-books.svg
+│   │   │   │   │   │       ├── 031-planet.svg
+│   │   │   │   │   │       ├── 032-constellation.svg
+│   │   │   │   │   │       ├── 033-planet.svg
+│   │   │   │   │   │       ├── 034-alien.svg
+│   │   │   │   │   │       ├── 035-globe.svg
+│   │   │   │   │   │       ├── 036-eclipse.svg
+│   │   │   │   │   │       ├── 037-meteor.svg
+│   │   │   │   │   │       ├── 038-eclipse.svg
+│   │   │   │   │   │       ├── 039-Asteroid.svg
+│   │   │   │   │   │       ├── 040-mission.svg
+│   │   │   │   │   │       ├── 041-spaceship.svg
+│   │   │   │   │   │       ├── 042-space shuttle.svg
+│   │   │   │   │   │       ├── 043-space shuttle.svg
+│   │   │   │   │   │       ├── 044-rocket.svg
+│   │   │   │   │   │       ├── 045-astronaut.svg
+│   │   │   │   │   │       ├── 046-rocket.svg
+│   │   │   │   │   │       ├── 047-computer.svg
+│   │   │   │   │   │       ├── 048-satellite.svg
+│   │   │   │   │   │       ├── 049-astronaut.svg
+│   │   │   │   │   │       └── 050-space robot.svg
+│   │   │   │   │   ├── setup.py
+│   │   │   │   │   └── starter_projects
+│   │   │   │   │       ├── Basic Prompting (Hello, World).json
+│   │   │   │   │       ├── Blog Writer.json
+│   │   │   │   │       ├── Document QA.json
+│   │   │   │   │       ├── Memory Chatbot.json
+│   │   │   │   │       └── Vector Store RAG.json
+│   │   │   │   ├── inputs
+│   │   │   │   │   ├── __init__.py
+│   │   │   │   │   ├── input_mixin.py
+│   │   │   │   │   ├── inputs.py
+│   │   │   │   │   └── validators.py
+│   │   │   │   ├── interface
+│   │   │   │   │   ├── __init__.py
+│   │   │   │   │   ├── importing
+│   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   └── utils.py
+│   │   │   │   │   ├── initialize
+│   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   └── loading.py
+│   │   │   │   │   ├── listing.py
+│   │   │   │   │   ├── run.py
+│   │   │   │   │   ├── types.py
+│   │   │   │   │   └── utils.py
+│   │   │   │   ├── io
+│   │   │   │   │   └── __init__.py
+│   │   │   │   ├── legacy_custom
+│   │   │   │   │   ├── __init__.py
+│   │   │   │   │   └── customs.py
+│   │   │   │   ├── load
+│   │   │   │   │   ├── __init__.py
+│   │   │   │   │   ├── load.py
+│   │   │   │   │   └── utils.py
+│   │   │   │   ├── main.py
+│   │   │   │   ├── memory.py
+│   │   │   │   ├── processing
+│   │   │   │   │   ├── __init__.py
+│   │   │   │   │   ├── base.py
+│   │   │   │   │   └── process.py
+│   │   │   │   ├── py.typed
+│   │   │   │   ├── schema
+│   │   │   │   │   ├── __init__.py
+│   │   │   │   │   ├── artifact.py
+│   │   │   │   │   ├── data.py
+│   │   │   │   │   ├── dotdict.py
+│   │   │   │   │   ├── graph.py
+│   │   │   │   │   ├── image.py
+│   │   │   │   │   ├── log.py
+│   │   │   │   │   ├── message.py
+│   │   │   │   │   └── schema.py
+│   │   │   │   ├── server.py
+│   │   │   │   ├── services
+│   │   │   │   │   ├── __init__.py
+│   │   │   │   │   ├── auth
+│   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   ├── factory.py
+│   │   │   │   │   │   ├── service.py
+│   │   │   │   │   │   └── utils.py
+│   │   │   │   │   ├── base.py
+│   │   │   │   │   ├── cache
+│   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   ├── base.py
+│   │   │   │   │   │   ├── factory.py
+│   │   │   │   │   │   ├── service.py
+│   │   │   │   │   │   └── utils.py
+│   │   │   │   │   ├── chat
+│   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   ├── cache.py
+│   │   │   │   │   │   ├── config.py
+│   │   │   │   │   │   ├── factory.py
+│   │   │   │   │   │   └── service.py
+│   │   │   │   │   ├── database
+│   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   ├── factory.py
+│   │   │   │   │   │   ├── models
+│   │   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   │   ├── api_key
+│   │   │   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   │   │   ├── crud.py
+│   │   │   │   │   │   │   │   └── model.py
+│   │   │   │   │   │   │   ├── base.py
+│   │   │   │   │   │   │   ├── flow
+│   │   │   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   │   │   ├── model.py
+│   │   │   │   │   │   │   │   └── utils.py
+│   │   │   │   │   │   │   ├── folder
+│   │   │   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   │   │   ├── constants.py
+│   │   │   │   │   │   │   │   ├── model.py
+│   │   │   │   │   │   │   │   └── utils.py
+│   │   │   │   │   │   │   ├── user
+│   │   │   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   │   │   ├── crud.py
+│   │   │   │   │   │   │   │   └── model.py
+│   │   │   │   │   │   │   └── variable
+│   │   │   │   │   │   │       ├── __init__.py
+│   │   │   │   │   │   │       └── model.py
+│   │   │   │   │   │   ├── service.py
+│   │   │   │   │   │   └── utils.py
+│   │   │   │   │   ├── deps.py
+│   │   │   │   │   ├── factory.py
+│   │   │   │   │   ├── manager.py
+│   │   │   │   │   ├── monitor
+│   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   ├── factory.py
+│   │   │   │   │   │   ├── schema.py
+│   │   │   │   │   │   ├── service.py
+│   │   │   │   │   │   └── utils.py
+│   │   │   │   │   ├── plugins
+│   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   ├── base.py
+│   │   │   │   │   │   ├── factory.py
+│   │   │   │   │   │   ├── langfuse_plugin.py
+│   │   │   │   │   │   └── service.py
+│   │   │   │   │   ├── schema.py
+│   │   │   │   │   ├── session
+│   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   ├── factory.py
+│   │   │   │   │   │   ├── service.py
+│   │   │   │   │   │   └── utils.py
+│   │   │   │   │   ├── settings
+│   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   ├── auth.py
+│   │   │   │   │   │   ├── base.py
+│   │   │   │   │   │   ├── constants.py
+│   │   │   │   │   │   ├── factory.py
+│   │   │   │   │   │   ├── manager.py
+│   │   │   │   │   │   ├── service.py
+│   │   │   │   │   │   └── utils.py
+│   │   │   │   │   ├── socket
+│   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   ├── factory.py
+│   │   │   │   │   │   ├── service.py
+│   │   │   │   │   │   └── utils.py
+│   │   │   │   │   ├── state
+│   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   ├── factory.py
+│   │   │   │   │   │   └── service.py
+│   │   │   │   │   ├── storage
+│   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   ├── constants.py
+│   │   │   │   │   │   ├── factory.py
+│   │   │   │   │   │   ├── local.py
+│   │   │   │   │   │   ├── s3.py
+│   │   │   │   │   │   ├── service.py
+│   │   │   │   │   │   └── utils.py
+│   │   │   │   │   ├── store
+│   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   ├── exceptions.py
+│   │   │   │   │   │   ├── factory.py
+│   │   │   │   │   │   ├── schema.py
+│   │   │   │   │   │   ├── service.py
+│   │   │   │   │   │   └── utils.py
+│   │   │   │   │   ├── task
+│   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   ├── backends
+│   │   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   │   ├── anyio.py
+│   │   │   │   │   │   │   ├── base.py
+│   │   │   │   │   │   │   └── celery.py
+│   │   │   │   │   │   ├── factory.py
+│   │   │   │   │   │   ├── service.py
+│   │   │   │   │   │   └── utils.py
+│   │   │   │   │   ├── telemetry
+│   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   ├── factory.py
+│   │   │   │   │   │   ├── schema.py
+│   │   │   │   │   │   └── service.py
+│   │   │   │   │   ├── tracing
+│   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   ├── factory.py
+│   │   │   │   │   │   ├── schema.py
+│   │   │   │   │   │   └── service.py
+│   │   │   │   │   ├── utils.py
+│   │   │   │   │   └── variable
+│   │   │   │   │       ├── __init__.py
+│   │   │   │   │       ├── base.py
+│   │   │   │   │       ├── factory.py
+│   │   │   │   │       ├── kubernetes.py
+│   │   │   │   │       ├── kubernetes_secrets.py
+│   │   │   │   │       └── service.py
+│   │   │   │   ├── template
+│   │   │   │   │   ├── __init__.py
+│   │   │   │   │   ├── field
+│   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   ├── base.py
+│   │   │   │   │   │   └── prompt.py
+│   │   │   │   │   ├── frontend_node
+│   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   ├── base.py
+│   │   │   │   │   │   ├── constants.py
+│   │   │   │   │   │   └── custom_components.py
+│   │   │   │   │   ├── template
+│   │   │   │   │   │   ├── __init__.py
+│   │   │   │   │   │   └── base.py
+│   │   │   │   │   └── utils.py
+│   │   │   │   ├── type_extraction
+│   │   │   │   │   ├── __init__.py
+│   │   │   │   │   └── type_extraction.py
+│   │   │   │   ├── utils
+│   │   │   │   │   ├── __init__.py
+│   │   │   │   │   ├── constants.py
+│   │   │   │   │   ├── lazy_load.py
+│   │   │   │   │   ├── logger.py
+│   │   │   │   │   ├── migration.py
+│   │   │   │   │   ├── payload.py
+│   │   │   │   │   ├── schemas.py
+│   │   │   │   │   ├── util.py
+│   │   │   │   │   ├── validate.py
+│   │   │   │   │   └── version.py
+│   │   │   │   └── worker.py
+│   │   │   ├── poetry.lock
+│   │   │   └── pyproject.toml
+│   │   └── langflow
+│   │       └── version
+│   │           ├── __init__.py
+│   │           └── version.py
+│   └── frontend
+│       ├── Dockerfile
+│       ├── README.md
+│       ├── cdk.Dockerfile
+│       ├── dev.Dockerfile
+│       ├── harFiles
+│       │   ├── example.har
+│       │   └── langflow.har
+│       ├── index.html
+│       ├── nginx.conf
+│       ├── package-lock.json
+│       ├── package.json
+│       ├── playwright.config.ts
+│       ├── postcss.config.js
+│       ├── public
+│       │   └── favicon.ico
+│       ├── run-tests.sh
+│       ├── set_proxy.sh
+│       ├── src
+│       │   ├── App.css
+│       │   ├── App.tsx
+│       │   ├── CustomNodes
+│       │   │   ├── GenericNode
+│       │   │   │   ├── components
+│       │   │   │   │   ├── HandleTooltipComponent
+│       │   │   │   │   │   └── index.tsx
+│       │   │   │   │   ├── OutputComponent
+│       │   │   │   │   │   └── index.tsx
+│       │   │   │   │   ├── handleRenderComponent
+│       │   │   │   │   │   └── index.tsx
+│       │   │   │   │   ├── outputModal
+│       │   │   │   │   │   ├── components
+│       │   │   │   │   │   │   └── switchOutputView
+│       │   │   │   │   │   │       ├── components
+│       │   │   │   │   │   │       │   └── index.tsx
+│       │   │   │   │   │   │       ├── helpers
+│       │   │   │   │   │   │       │   └── convert-to-table-rows.ts
+│       │   │   │   │   │   │       └── index.tsx
+│       │   │   │   │   │   └── index.tsx
+│       │   │   │   │   ├── parameterComponent
+│       │   │   │   │   │   ├── constants.ts
+│       │   │   │   │   │   └── index.tsx
+│       │   │   │   │   └── tooltipRenderComponent
+│       │   │   │   │       └── index.tsx
+│       │   │   │   └── index.tsx
+│       │   │   ├── helpers
+│       │   │   │   ├── count-handles.ts
+│       │   │   │   ├── get-class-from-build-status.ts
+│       │   │   │   ├── get-node-input-colors.ts
+│       │   │   │   └── get-node-output-colors.ts
+│       │   │   ├── hooks
+│       │   │   │   ├── use-check-code-validity.tsx
+│       │   │   │   ├── use-fetch-data-on-mount.tsx
+│       │   │   │   ├── use-handle-new-value.tsx
+│       │   │   │   ├── use-handle-node-class.tsx
+│       │   │   │   ├── use-handle-refresh-buttons.tsx
+│       │   │   │   ├── use-icon-render.tsx
+│       │   │   │   ├── use-icons-status.tsx
+│       │   │   │   ├── use-update-node-code.tsx
+│       │   │   │   ├── use-update-validation-status.tsx
+│       │   │   │   └── use-validation-status-string.tsx
+│       │   │   └── utils
+│       │   │       ├── get-field-title.tsx
+│       │   │       └── sort-fields.tsx
+│       │   ├── alerts
+│       │   │   ├── alertDropDown
+│       │   │   │   ├── components
+│       │   │   │   │   └── singleAlertComponent
+│       │   │   │   │       └── index.tsx
+│       │   │   │   └── index.tsx
+│       │   │   ├── displayArea
+│       │   │   │   └── index.tsx
+│       │   │   ├── error
+│       │   │   │   └── index.tsx
+│       │   │   ├── hooks
+│       │   │   │   └── useOnClickOutside
+│       │   │   │       └── index.ts
+│       │   │   ├── notice
+│       │   │   │   └── index.tsx
+│       │   │   └── success
+│       │   │       └── index.tsx
+│       │   ├── assets
+│       │   │   ├── male-technologist.png
+│       │   │   ├── profile-circle.png
+│       │   │   ├── robot.png
+│       │   │   ├── text-security-disc.woff
+│       │   │   ├── undraw_blog_post_re_fy5x.svg
+│       │   │   ├── undraw_chat_bot_re_e2gj.svg
+│       │   │   ├── undraw_cloud_docs_re_xjht.svg
+│       │   │   ├── undraw_design_components_9vy6.svg
+│       │   │   ├── undraw_mobile_messages_re_yx8w.svg
+│       │   │   ├── undraw_real_time_analytics_re_yliv.svg
+│       │   │   ├── undraw_short_bio_re_fmx0.svg
+│       │   │   ├── undraw_team_collaboration_re_ow29.svg
+│       │   │   └── undraw_transfer_files_re_a2a9.svg
+│       │   ├── boilerplate
+│       │   │   └── raw-component
+│       │   │       └── index.tsx
+│       │   ├── components
+│       │   │   ├── ImageViewer
+│       │   │   │   └── index.tsx
+│       │   │   ├── accordionComponent
+│       │   │   │   ├── composite
+│       │   │   │   │   └── folderAccordionComponent
+│       │   │   │   │       └── index.tsx
+│       │   │   │   └── index.tsx
+│       │   │   ├── addNewVariableButtonComponent
+│       │   │   │   ├── addNewVariableButton.tsx
+│       │   │   │   └── utils
+│       │   │   │       └── sort-by-name.tsx
+│       │   │   ├── arrayReaderComponent
+│       │   │   │   └── index.tsx
+│       │   │   ├── authAdminGuard
+│       │   │   │   └── index.tsx
+│       │   │   ├── authGuard
+│       │   │   │   └── index.tsx
+│       │   │   ├── authLoginGuard
+│       │   │   │   └── index.tsx
+│       │   │   ├── cardComponent
+│       │   │   │   ├── components
+│       │   │   │   │   └── dragCardComponent
+│       │   │   │   │       └── index.tsx
+│       │   │   │   ├── index.tsx
+│       │   │   │   └── utils
+│       │   │   │       └── convert-test-name.tsx
+│       │   │   ├── cardsWrapComponent
+│       │   │   │   └── index.tsx
+│       │   │   ├── catchAllRoutes
+│       │   │   │   └── index.tsx
+│       │   │   ├── chatComponent
+│       │   │   │   └── index.tsx
+│       │   │   ├── codeAreaComponent
+│       │   │   │   └── index.tsx
+│       │   │   ├── codeTabsComponent
+│       │   │   │   └── index.tsx
+│       │   │   ├── crashErrorComponent
+│       │   │   │   └── index.tsx
+│       │   │   ├── csvOutputComponent
+│       │   │   │   ├── helpers
+│       │   │   │   │   └── convert-data-function.ts
+│       │   │   │   └── index.tsx
+│       │   │   ├── dataOutputComponent
+│       │   │   │   └── index.tsx
+│       │   │   ├── dateReaderComponent
+│       │   │   │   └── index.tsx
+│       │   │   ├── dictComponent
+│       │   │   │   └── index.tsx
+│       │   │   ├── dropdownButtonComponent
+│       │   │   │   └── index.tsx
+│       │   │   ├── dropdownComponent
+│       │   │   │   └── index.tsx
+│       │   │   ├── editFlowSettingsComponent
+│       │   │   │   └── index.tsx
+│       │   │   ├── exampleComponent
+│       │   │   │   └── index.tsx
+│       │   │   ├── fetchErrorComponent
+│       │   │   │   └── index.tsx
+│       │   │   ├── floatComponent
+│       │   │   │   └── index.tsx
+│       │   │   ├── genericIconComponent
+│       │   │   │   └── index.tsx
+│       │   │   ├── headerComponent
+│       │   │   │   ├── components
+│       │   │   │   │   └── menuBar
+│       │   │   │   │       └── index.tsx
+│       │   │   │   └── index.tsx
+│       │   │   ├── horizontalScrollFadeComponent
+│       │   │   │   └── index.tsx
+│       │   │   ├── inputComponent
+│       │   │   │   ├── components
+│       │   │   │   │   ├── popover
+│       │   │   │   │   │   └── index.tsx
+│       │   │   │   │   └── popoverObject
+│       │   │   │   │       └── index.tsx
+│       │   │   │   └── index.tsx
+│       │   │   ├── inputFileComponent
+│       │   │   │   └── index.tsx
+│       │   │   ├── inputGlobalComponent
+│       │   │   │   └── index.tsx
+│       │   │   ├── inputListComponent
+│       │   │   │   └── index.tsx
+│       │   │   ├── intComponent
+│       │   │   │   └── index.tsx
+│       │   │   ├── keypairListComponent
+│       │   │   │   └── index.tsx
+│       │   │   ├── loadingComponent
+│       │   │   │   └── index.tsx
+│       │   │   ├── numberReader
+│       │   │   │   └── index.tsx
+│       │   │   ├── objectRender
+│       │   │   │   └── index.tsx
+│       │   │   ├── pageLayout
+│       │   │   │   └── index.tsx
+│       │   │   ├── paginatorComponent
+│       │   │   │   └── index.tsx
+│       │   │   ├── pdfViewer
+│       │   │   │   ├── Error
+│       │   │   │   │   └── index.tsx
+│       │   │   │   ├── index.tsx
+│       │   │   │   └── noData
+│       │   │   │       └── index.tsx
+│       │   │   ├── promptComponent
+│       │   │   │   └── index.tsx
+│       │   │   ├── renderIconComponent
+│       │   │   │   └── index.tsx
+│       │   │   ├── sanitizedHTMLWrapper
+│       │   │   │   └── index.tsx
+│       │   │   ├── shadTooltipComponent
+│       │   │   │   └── index.tsx
+│       │   │   ├── sidebarComponent
+│       │   │   │   ├── components
+│       │   │   │   │   ├── sideBarButtons
+│       │   │   │   │   │   └── index.tsx
+│       │   │   │   │   └── sideBarFolderButtons
+│       │   │   │   │       └── index.tsx
+│       │   │   │   ├── hooks
+│       │   │   │   │   └── use-on-file-drop.tsx
+│       │   │   │   └── index.tsx
+│       │   │   ├── skeletonCardComponent
+│       │   │   │   └── index.tsx
+│       │   │   ├── storeGuard
+│       │   │   │   └── index.tsx
+│       │   │   ├── stringReaderComponent
+│       │   │   │   └── index.tsx
+│       │   │   ├── tableComponent
+│       │   │   │   ├── components
+│       │   │   │   │   ├── ResetColumns
+│       │   │   │   │   │   └── index.tsx
+│       │   │   │   │   ├── TableOptions
+│       │   │   │   │   │   └── index.tsx
+│       │   │   │   │   ├── loadingOverlay
+│       │   │   │   │   │   └── index.tsx
+│       │   │   │   │   ├── tableAutoCellRender
+│       │   │   │   │   │   └── index.tsx
+│       │   │   │   │   ├── tableNodeCellRender
+│       │   │   │   │   │   └── index.tsx
+│       │   │   │   │   ├── tableToggleCellRender
+│       │   │   │   │   │   └── index.tsx
+│       │   │   │   │   └── tableTooltipRender
+│       │   │   │   │       └── index.tsx
+│       │   │   │   ├── index.tsx
+│       │   │   │   └── utils
+│       │   │   │       └── reset-grid-columns.tsx
+│       │   │   ├── tagsSelectorComponent
+│       │   │   │   └── index.tsx
+│       │   │   ├── textAreaComponent
+│       │   │   │   └── index.tsx
+│       │   │   ├── textInputComponent
+│       │   │   │   └── index.tsx
+│       │   │   ├── textOutputComponent
+│       │   │   │   └── index.tsx
+│       │   │   ├── toggleShadComponent
+│       │   │   │   └── index.tsx
+│       │   │   ├── ui
+│       │   │   │   ├── accordion.tsx
+│       │   │   │   ├── alert.tsx
+│       │   │   │   ├── badge.tsx
+│       │   │   │   ├── button.tsx
+│       │   │   │   ├── card.tsx
+│       │   │   │   ├── checkbox.tsx
+│       │   │   │   ├── checkmark.tsx
+│       │   │   │   ├── combobox.tsx
+│       │   │   │   ├── command.tsx
+│       │   │   │   ├── custom-accordion.tsx
+│       │   │   │   ├── dialog-with-no-close.tsx
+│       │   │   │   ├── dialog.tsx
+│       │   │   │   ├── dropdown-menu.tsx
+│       │   │   │   ├── form.tsx
+│       │   │   │   ├── input.tsx
+│       │   │   │   ├── label.tsx
+│       │   │   │   ├── loading.tsx
+│       │   │   │   ├── menubar.tsx
+│       │   │   │   ├── popover.tsx
+│       │   │   │   ├── progress.tsx
+│       │   │   │   ├── refreshButton.tsx
+│       │   │   │   ├── rename-label.tsx
+│       │   │   │   ├── select-custom.tsx
+│       │   │   │   ├── select.tsx
+│       │   │   │   ├── separator.tsx
+│       │   │   │   ├── skeleton.tsx
+│       │   │   │   ├── switch.tsx
+│       │   │   │   ├── table.tsx
+│       │   │   │   ├── tabs.tsx
+│       │   │   │   ├── textarea.tsx
+│       │   │   │   ├── toggle.tsx
+│       │   │   │   ├── tooltip.tsx
+│       │   │   │   └── xmark.tsx
+│       │   │   └── viewTriggers
+│       │   │       └── chat
+│       │   │           └── index.tsx
+│       │   ├── constants
+│       │   │   ├── alerts_constants.tsx
+│       │   │   ├── constants.ts
+│       │   │   └── enums.ts
+│       │   ├── contexts
+│       │   │   ├── authContext.tsx
+│       │   │   └── index.tsx
+│       │   ├── controllers
+│       │   │   └── API
+│       │   │       ├── api.tsx
+│       │   │       ├── helpers
+│       │   │       │   └── check-duplicate-requests.ts
+│       │   │       ├── index.ts
+│       │   │       └── utils.tsx
+│       │   ├── flow_constants.tsx
+│       │   ├── hooks
+│       │   │   └── use-track-last-visited-path.tsx
+│       │   ├── icons
+│       │   │   ├── AWS
+│       │   │   │   ├── AWS.jsx
+│       │   │   │   ├── AWS.svg
+│       │   │   │   └── index.tsx
+│       │   │   ├── Airbyte
+│       │   │   │   ├── Airbyte.jsx
+│       │   │   │   ├── airbyte.svg
+│       │   │   │   └── index.tsx
+│       │   │   ├── Anthropic
+│       │   │   │   ├── Anthropic.jsx
+│       │   │   │   ├── AnthropicBox.jsx
+│       │   │   │   ├── anthropic.svg
+│       │   │   │   ├── anthropic_box.svg
+│       │   │   │   └── index.tsx
+│       │   │   ├── AstraDB
+│       │   │   │   ├── AstraDB.jsx
+│       │   │   │   ├── Favicon.svg
+│       │   │   │   └── index.tsx
+│       │   │   ├── AzLogo
+│       │   │   │   ├── AzLogo.jsx
+│       │   │   │   ├── az_logo.svg
+│       │   │   │   └── index.tsx
+│       │   │   ├── Azure
+│       │   │   │   ├── Azure.jsx
+│       │   │   │   └── index.tsx
+│       │   │   ├── Bing
+│       │   │   │   ├── Bing.jsx
+│       │   │   │   ├── bing.svg
+│       │   │   │   └── index.tsx
+│       │   │   ├── BotMessageSquare
+│       │   │   │   ├── BotMessageSquare.jsx
+│       │   │   │   └── index.tsx
+│       │   │   ├── Cassandra
+│       │   │   │   ├── Cassandra.jsx
+│       │   │   │   ├── cassandra.svg
+│       │   │   │   └── index.tsx
+│       │   │   ├── ChromaIcon
+│       │   │   │   ├── Chroma.jsx
+│       │   │   │   ├── chroma.svg
+│       │   │   │   └── index.tsx
+│       │   │   ├── Cohere
+│       │   │   │   ├── Cohere.jsx
+│       │   │   │   ├── cohere.svg
+│       │   │   │   └── index.tsx
+│       │   │   ├── Couchbase
+│       │   │   │   ├── Couchbase.jsx
+│       │   │   │   ├── couchbase.svg
+│       │   │   │   └── index.tsx
+│       │   │   ├── ElasticsearchStore
+│       │   │   │   ├── ElasticsearchLogo.jsx
+│       │   │   │   ├── ElasticsearchLogo.svg
+│       │   │   │   └── index.tsx
+│       │   │   ├── Evernote
+│       │   │   │   ├── EvernoteIcon.jsx
+│       │   │   │   ├── evernote-icon.svg
+│       │   │   │   └── index.tsx
+│       │   │   ├── FacebookMessenger
+│       │   │   │   ├── FacebookMessengerLogo2020.jsx
+│       │   │   │   ├── Facebook_Messenger_logo_2020.svg
+│       │   │   │   └── index.tsx
+│       │   │   ├── Firecrawl
+│       │   │   │   ├── FirecrawlLogo.jsx
+│       │   │   │   ├── firecraw-logo.svg
+│       │   │   │   └── index.tsx
+│       │   │   ├── GitBook
+│       │   │   │   ├── GitbookSvgrepoCom.jsx
+│       │   │   │   ├── gitbook-svgrepo-com.svg
+│       │   │   │   └── index.tsx
+│       │   │   ├── Google
+│       │   │   │   ├── Google.jsx
+│       │   │   │   ├── google.svg
+│       │   │   │   └── index.tsx
+│       │   │   ├── GoogleGenerativeAI
+│       │   │   │   ├── Google Gemini icon.svg
+│       │   │   │   ├── GoogleGemini.jsx
+│       │   │   │   └── index.tsx
+│       │   │   ├── GradientSparkles
+│       │   │   │   └── index.tsx
+│       │   │   ├── Groq
+│       │   │   │   ├── GroqLogo.jsx
+│       │   │   │   ├── GroqLogo.svg
+│       │   │   │   └── index.tsx
+│       │   │   ├── HuggingFace
+│       │   │   │   ├── HfLogo.jsx
+│       │   │   │   ├── hf-logo.svg
+│       │   │   │   └── index.tsx
+│       │   │   ├── IFixIt
+│       │   │   │   ├── IfixitSeeklogoCom.jsx
+│       │   │   │   ├── ifixit-seeklogo.com.svg
+│       │   │   │   └── index.tsx
+│       │   │   ├── LangChain
+│       │   │   │   ├── LangChainIcon.jsx
+│       │   │   │   ├── index.tsx
+│       │   │   │   └── langchain-icon.svg
+│       │   │   ├── Meta
+│       │   │   │   ├── MetaIcon.jsx
+│       │   │   │   ├── index.tsx
+│       │   │   │   └── meta-icon.svg
+│       │   │   ├── Midjorney
+│       │   │   │   ├── MidjourneyEmblem.jsx
+│       │   │   │   ├── Midjourney_Emblem.svg
+│       │   │   │   └── index.tsx
+│       │   │   ├── MongoDB
+│       │   │   │   ├── MongodbIcon.jsx
+│       │   │   │   ├── index.tsx
+│       │   │   │   └── mongodb-icon.svg
+│       │   │   ├── Notion
+│       │   │   │   ├── Notion-logo.svg
+│       │   │   │   ├── NotionLogo.jsx
+│       │   │   │   └── index.tsx
+│       │   │   ├── Ollama
+│       │   │   │   ├── Ollama.jsx
+│       │   │   │   ├── Ollama.svg
+│       │   │   │   └── index.tsx
+│       │   │   ├── OpenAi
+│       │   │   │   ├── OpenAi.jsx
+│       │   │   │   ├── index.tsx
+│       │   │   │   └── openAI.svg
+│       │   │   ├── Pinecone
+│       │   │   │   ├── PineconeLogo.jsx
+│       │   │   │   ├── index.tsx
+│       │   │   │   └── pinecone_logo.svg
+│       │   │   ├── Postgres
+│       │   │   │   ├── Postgres.jsx
+│       │   │   │   ├── Postgres.svg
+│       │   │   │   └── index.tsx
+│       │   │   ├── PowerPoint
+│       │   │   │   ├── PowerPoint.jsx
+│       │   │   │   ├── PowerPoint.svg
+│       │   │   │   └── index.tsx
+│       │   │   ├── Python
+│       │   │   │   ├── Python.jsx
+│       │   │   │   ├── Python.svg
+│       │   │   │   └── index.tsx
+│       │   │   ├── QDrant
+│       │   │   │   ├── QDrant.jsx
+│       │   │   │   ├── QDrant.svg
+│       │   │   │   └── index.tsx
+│       │   │   ├── QianFanChat
+│       │   │   │   ├── QianFanChat.jsx
+│       │   │   │   ├── QianFanChat.svg
+│       │   │   │   └── index.tsx
+│       │   │   ├── ReadTheDocs
+│       │   │   │   ├── ReadthedocsioIcon.jsx
+│       │   │   │   ├── index.tsx
+│       │   │   │   └── readthedocsio-icon.svg
+│       │   │   ├── Redis
+│       │   │   │   ├── Redis.jsx
+│       │   │   │   ├── Redis.svg
+│       │   │   │   └── index.tsx
+│       │   │   ├── Searx
+│       │   │   │   ├── SearxLogo.jsx
+│       │   │   │   ├── Searx_logo.svg
+│       │   │   │   └── index.tsx
+│       │   │   ├── Serper
+│       │   │   │   ├── Serper.jsx
+│       │   │   │   ├── index.tsx
+│       │   │   │   └── serper.svg
+│       │   │   ├── Share
+│       │   │   │   ├── Share.jsx
+│       │   │   │   ├── index.tsx
+│       │   │   │   └── share.svg
+│       │   │   ├── Share2
+│       │   │   │   ├── Share2.jsx
+│       │   │   │   ├── index.tsx
+│       │   │   │   └── share2.svg
+│       │   │   ├── Slack
+│       │   │   │   ├── SlackIcon.jsx
+│       │   │   │   ├── index.tsx
+│       │   │   │   └── slack-icon.svg
+│       │   │   ├── Streamlit
+│       │   │   │   ├── SvgStreamlit.jsx
+│       │   │   │   └── index.tsx
+│       │   │   ├── Upstash
+│       │   │   │   ├── UpstashIcon.jsx
+│       │   │   │   ├── index.tsx
+│       │   │   │   └── upstash-icon-seeklogo.svg
+│       │   │   ├── VectaraIcon
+│       │   │   │   ├── Vectara.jsx
+│       │   │   │   ├── index.tsx
+│       │   │   │   └── vectara.svg
+│       │   │   ├── VertexAI
+│       │   │   │   ├── VertexAi.jsx
+│       │   │   │   ├── index.tsx
+│       │   │   │   └── vertex_ai.svg
+│       │   │   ├── Weaviate
+│       │   │   │   ├── Weaviate.jsx
+│       │   │   │   ├── index.tsx
+│       │   │   │   └── weaviate.svg
+│       │   │   ├── Wikipedia
+│       │   │   │   ├── Wikipedia.jsx
+│       │   │   │   ├── Wikipedia.svg
+│       │   │   │   └── index.tsx
+│       │   │   ├── Wolfram
+│       │   │   │   ├── Wolfram.jsx
+│       │   │   │   ├── index.tsx
+│       │   │   │   └── wolfram.svg
+│       │   │   ├── Word
+│       │   │   │   ├── Word.jsx
+│       │   │   │   ├── index.tsx
+│       │   │   │   └── word.svg
+│       │   │   ├── hackerNews
+│       │   │   │   ├── YCombinatorLogo.jsx
+│       │   │   │   ├── Y_Combinator_logo.svg
+│       │   │   │   └── index.tsx
+│       │   │   ├── mistral
+│       │   │   │   ├── index.tsx
+│       │   │   │   └── mistralIcon.jsx
+│       │   │   └── supabase
+│       │   │       ├── SupabaseIcon.jsx
+│       │   │       ├── index.tsx
+│       │   │       └── supabase-icon.svg
+│       │   ├── index.tsx
+│       │   ├── logo.svg
+│       │   ├── modals
+│       │   │   ├── BundleModal
+│       │   │   │   ├── component
+│       │   │   │   │   └── index.tsx
+│       │   │   │   ├── entities
+│       │   │   │   │   └── index.ts
+│       │   │   │   ├── hooks
+│       │   │   │   │   └── submit-folder.tsx
+│       │   │   │   └── index.tsx
+│       │   │   ├── IOModal
+│       │   │   │   ├── components
+│       │   │   │   │   ├── IOFieldView
+│       │   │   │   │   │   ├── components
+│       │   │   │   │   │   │   ├── FileInput
+│       │   │   │   │   │   │   │   └── index.tsx
+│       │   │   │   │   │   │   ├── JSONInput
+│       │   │   │   │   │   │   │   └── index.tsx
+│       │   │   │   │   │   │   ├── csvSelect
+│       │   │   │   │   │   │   │   └── index.tsx
+│       │   │   │   │   │   │   └── keyPairInput
+│       │   │   │   │   │   │       └── index.tsx
+│       │   │   │   │   │   └── index.tsx
+│       │   │   │   │   ├── SessionView
+│       │   │   │   │   │   ├── hooks
+│       │   │   │   │   │   │   └── index.tsx
+│       │   │   │   │   │   └── index.tsx
+│       │   │   │   │   └── chatView
+│       │   │   │   │       ├── chatInput
+│       │   │   │   │       │   ├── components
+│       │   │   │   │       │   │   ├── buttonSendWrapper
+│       │   │   │   │       │   │   │   └── index.tsx
+│       │   │   │   │       │   │   ├── textAreaWrapper
+│       │   │   │   │       │   │   │   └── index.tsx
+│       │   │   │   │       │   │   └── uploadFileButton
+│       │   │   │   │       │   │       └── index.tsx
+│       │   │   │   │       │   ├── helpers
+│       │   │   │   │       │   │   └── get-class-file-preview.ts
+│       │   │   │   │       │   ├── hooks
+│       │   │   │   │       │   │   ├── use-auto-resize-text-area.tsx
+│       │   │   │   │       │   │   ├── use-drag-and-drop.tsx
+│       │   │   │   │       │   │   ├── use-file-upload.tsx
+│       │   │   │   │       │   │   ├── use-focus-unlock.tsx
+│       │   │   │   │       │   │   ├── use-handle-file-change.tsx
+│       │   │   │   │       │   │   └── use-upload.tsx
+│       │   │   │   │       │   └── index.tsx
+│       │   │   │   │       ├── chatMessage
+│       │   │   │   │       │   ├── codeBlock
+│       │   │   │   │       │   │   └── index.tsx
+│       │   │   │   │       │   ├── components
+│       │   │   │   │       │   │   └── fileCardWrapper
+│       │   │   │   │       │   │       └── index.tsx
+│       │   │   │   │       │   └── index.tsx
+│       │   │   │   │       ├── fileComponent
+│       │   │   │   │       │   ├── components
+│       │   │   │   │       │   │   └── downloadButton
+│       │   │   │   │       │   │       └── downloadButton.tsx
+│       │   │   │   │       │   ├── index.tsx
+│       │   │   │   │       │   └── utils
+│       │   │   │   │       │       ├── get-classes.tsx
+│       │   │   │   │       │       └── handle-download.tsx
+│       │   │   │   │       ├── filePreviewChat
+│       │   │   │   │       │   ├── index.tsx
+│       │   │   │   │       │   └── utils
+│       │   │   │   │       │       └── format-file-name.tsx
+│       │   │   │   │       └── index.tsx
+│       │   │   │   └── index.tsx
+│       │   │   ├── apiModal
+│       │   │   │   ├── index.tsx
+│       │   │   │   └── utils
+│       │   │   │       ├── build-content.tsx
+│       │   │   │       ├── build-tweaks.ts
+│       │   │   │       ├── check-can-build-tweak-object.ts
+│       │   │   │       ├── get-changes-types.ts
+│       │   │   │       ├── get-curl-code.tsx
+│       │   │   │       ├── get-js-api-code.tsx
+│       │   │   │       ├── get-nodes-with-default-value.ts
+│       │   │   │       ├── get-python-api-code.tsx
+│       │   │   │       ├── get-python-code.tsx
+│       │   │   │       ├── get-value.ts
+│       │   │   │       ├── get-widget-code.tsx
+│       │   │   │       └── tabs-array.tsx
+│       │   │   ├── baseModal
+│       │   │   │   ├── helpers
+│       │   │   │   │   └── switch-case-size.ts
+│       │   │   │   └── index.tsx
+│       │   │   ├── codeAreaModal
+│       │   │   │   └── index.tsx
+│       │   │   ├── confirmationModal
+│       │   │   │   └── index.tsx
+│       │   │   ├── deleteConfirmationModal
+│       │   │   │   └── index.tsx
+│       │   │   ├── dictAreaModal
+│       │   │   │   └── index.tsx
+│       │   │   ├── editNodeModal
+│       │   │   │   ├── hooks
+│       │   │   │   │   ├── use-column-defs.tsx
+│       │   │   │   │   └── use-row-data.tsx
+│       │   │   │   └── index.tsx
+│       │   │   ├── exportModal
+│       │   │   │   └── index.tsx
+│       │   │   ├── flowLogsModal
+│       │   │   │   └── index.tsx
+│       │   │   ├── flowSettingsModal
+│       │   │   │   └── index.tsx
+│       │   │   ├── foldersModal
+│       │   │   │   ├── component
+│       │   │   │   │   └── index.tsx
+│       │   │   │   ├── entities
+│       │   │   │   │   └── index.ts
+│       │   │   │   ├── hooks
+│       │   │   │   │   └── submit-folder.tsx
+│       │   │   │   └── index.tsx
+│       │   │   ├── genericModal
+│       │   │   │   ├── index.tsx
+│       │   │   │   └── utils
+│       │   │   │       └── var-highlight-html.tsx
+│       │   │   ├── newFlowModal
+│       │   │   │   ├── components
+│       │   │   │   │   ├── NewFlowCardComponent
+│       │   │   │   │   │   └── index.tsx
+│       │   │   │   │   └── undrawCards
+│       │   │   │   │       └── index.tsx
+│       │   │   │   └── index.tsx
+│       │   │   ├── nodeModal
+│       │   │   │   └── components
+│       │   │   │       └── modalField
+│       │   │   │           └── index.tsx
+│       │   │   ├── secretKeyModal
+│       │   │   │   └── index.tsx
+│       │   │   ├── shareModal
+│       │   │   │   ├── index.tsx
+│       │   │   │   └── utils
+│       │   │   │       └── get-tags-ids.tsx
+│       │   │   ├── textModal
+│       │   │   │   ├── components
+│       │   │   │   │   └── textEditorArea
+│       │   │   │   │       └── index.tsx
+│       │   │   │   └── index.tsx
+│       │   │   └── userManagementModal
+│       │   │       └── index.tsx
+│       │   ├── pages
+│       │   │   ├── AdminPage
+│       │   │   │   ├── LoginPage
+│       │   │   │   │   └── index.tsx
+│       │   │   │   └── index.tsx
+│       │   │   ├── DeleteAccountPage
+│       │   │   │   └── index.tsx
+│       │   │   ├── FlowPage
+│       │   │   │   ├── components
+│       │   │   │   │   ├── ConnectionLineComponent
+│       │   │   │   │   │   └── index.tsx
+│       │   │   │   │   ├── DisclosureComponent
+│       │   │   │   │   │   └── index.tsx
+│       │   │   │   │   ├── PageComponent
+│       │   │   │   │   │   ├── index.tsx
+│       │   │   │   │   │   └── utils
+│       │   │   │   │   │       ├── get-random-name.tsx
+│       │   │   │   │   │       └── is-wrapped-with-class.tsx
+│       │   │   │   │   ├── ParentDisclosureComponent
+│       │   │   │   │   │   └── index.tsx
+│       │   │   │   │   ├── SelectionMenuComponent
+│       │   │   │   │   │   └── index.tsx
+│       │   │   │   │   ├── extraSidebarComponent
+│       │   │   │   │   │   ├── index.tsx
+│       │   │   │   │   │   ├── sideBarDraggableComponent
+│       │   │   │   │   │   │   └── index.tsx
+│       │   │   │   │   │   ├── utils
+│       │   │   │   │   │   │   └── sensitive-sort.tsx
+│       │   │   │   │   │   └── utils.tsx
+│       │   │   │   │   └── nodeToolbarComponent
+│       │   │   │   │       ├── index.tsx
+│       │   │   │   │       └── toolbarSelectItem
+│       │   │   │   │           └── index.tsx
+│       │   │   │   └── index.tsx
+│       │   │   ├── LoginPage
+│       │   │   │   └── index.tsx
+│       │   │   ├── MainPage
+│       │   │   │   ├── components
+│       │   │   │   │   ├── componentsComponent
+│       │   │   │   │   │   ├── hooks
+│       │   │   │   │   │   │   ├── use-delete-multiple.tsx
+│       │   │   │   │   │   │   ├── use-description-modal.tsx
+│       │   │   │   │   │   │   ├── use-filtered-flows.tsx
+│       │   │   │   │   │   │   ├── use-handle-duplicate.tsx
+│       │   │   │   │   │   │   ├── use-handle-export.tsx
+│       │   │   │   │   │   │   ├── use-handle-select-all.tsx
+│       │   │   │   │   │   │   ├── use-select-options-change.tsx
+│       │   │   │   │   │   │   └── use-selected-flows.tsx
+│       │   │   │   │   │   └── index.tsx
+│       │   │   │   │   ├── emptyComponent
+│       │   │   │   │   │   └── index.tsx
+│       │   │   │   │   ├── headerComponent
+│       │   │   │   │   │   └── index.tsx
+│       │   │   │   │   ├── modalsComponent
+│       │   │   │   │   │   └── index.tsx
+│       │   │   │   │   └── myCollectionComponent
+│       │   │   │   │       ├── components
+│       │   │   │   │       │   ├── headerTabsSearchComponent
+│       │   │   │   │       │   │   └── index.tsx
+│       │   │   │   │       │   ├── inputSearchComponent
+│       │   │   │   │       │   │   └── index.tsx
+│       │   │   │   │       │   └── tabsComponent
+│       │   │   │   │       │       └── index.tsx
+│       │   │   │   │       └── index.tsx
+│       │   │   │   ├── entities
+│       │   │   │   │   └── index.tsx
+│       │   │   │   ├── hooks
+│       │   │   │   │   ├── use-delete-folder.tsx
+│       │   │   │   │   ├── use-dropdown-options.tsx
+│       │   │   │   │   └── use-on-file-drop.tsx
+│       │   │   │   ├── pages
+│       │   │   │   │   └── mainPage
+│       │   │   │   │       └── index.tsx
+│       │   │   │   ├── services
+│       │   │   │   │   └── index.ts
+│       │   │   │   └── utils
+│       │   │   │       ├── get-name-by-type.ts
+│       │   │   │       ├── handle-download-folder.ts
+│       │   │   │       └── sort-flows.ts
+│       │   │   ├── Playground
+│       │   │   │   └── index.tsx
+│       │   │   ├── ProfileSettingsPage
+│       │   │   │   └── index.tsx
+│       │   │   ├── SettingsPage
+│       │   │   │   ├── index.tsx
+│       │   │   │   └── pages
+│       │   │   │       ├── ApiKeysPage
+│       │   │   │       │   ├── components
+│       │   │   │       │   │   └── ApiKeyHeader
+│       │   │   │       │   │       └── index.tsx
+│       │   │   │       │   ├── helpers
+│       │   │   │       │   │   └── column-defs.ts
+│       │   │   │       │   ├── hooks
+│       │   │   │       │   │   ├── use-api-keys.tsx
+│       │   │   │       │   │   └── use-handle-delete-key.tsx
+│       │   │   │       │   └── index.tsx
+│       │   │   │       ├── GeneralPage
+│       │   │   │       │   ├── components
+│       │   │   │       │   │   ├── GeneralPageHeader
+│       │   │   │       │   │   │   └── index.tsx
+│       │   │   │       │   │   ├── PasswordForm
+│       │   │   │       │   │   │   └── index.tsx
+│       │   │   │       │   │   ├── ProfileGradientForm
+│       │   │   │       │   │   │   └── index.tsx
+│       │   │   │       │   │   ├── ProfilePictureForm
+│       │   │   │       │   │   │   ├── components
+│       │   │   │       │   │   │   │   └── profilePictureChooserComponent
+│       │   │   │       │   │   │   │       ├── hooks
+│       │   │   │       │   │   │   │       │   ├── use-get-profile-pictures.ts
+│       │   │   │       │   │   │   │       │   └── use-preload-images.tsx
+│       │   │   │       │   │   │   │       └── index.tsx
+│       │   │   │       │   │   │   └── index.tsx
+│       │   │   │       │   │   └── StoreApiKeyForm
+│       │   │   │       │   │       └── index.tsx
+│       │   │   │       │   └── index.tsx
+│       │   │   │       ├── GlobalVariablesPage
+│       │   │   │       │   └── index.tsx
+│       │   │   │       ├── ShortcutsPage
+│       │   │   │       │   ├── EditShortcutButton
+│       │   │   │       │   │   └── index.tsx
+│       │   │   │       │   └── index.tsx
+│       │   │   │       ├── hooks
+│       │   │   │       │   ├── use-patch-gradient.tsx
+│       │   │   │       │   ├── use-patch-password.tsx
+│       │   │   │       │   ├── use-patch-profile-picture.tsx
+│       │   │   │       │   ├── use-save-key.tsx
+│       │   │   │       │   └── use-scroll-to-element.tsx
+│       │   │   │       └── messagesPage
+│       │   │   │           ├── components
+│       │   │   │           │   └── headerMessages
+│       │   │   │           │       └── index.tsx
+│       │   │   │           ├── hooks
+│       │   │   │           │   ├── use-messages-table.tsx
+│       │   │   │           │   ├── use-remove-messages.tsx
+│       │   │   │           │   └── use-updateMessage.tsx
+│       │   │   │           └── index.tsx
+│       │   │   ├── SignUpPage
+│       │   │   │   └── index.tsx
+│       │   │   ├── StorePage
+│       │   │   │   └── index.tsx
+│       │   │   └── ViewPage
+│       │   │       └── index.tsx
+│       │   ├── png.d.ts
+│       │   ├── reportWebVitals.ts
+│       │   ├── routes.tsx
+│       │   ├── shared
+│       │   │   └── components
+│       │   │       ├── caseComponent
+│       │   │       │   └── index.tsx
+│       │   │       ├── suspenseImageComponent
+│       │   │       │   └── index.tsx
+│       │   │       └── textOutputView
+│       │   │           └── index.tsx
+│       │   ├── stores
+│       │   │   ├── alertStore.ts
+│       │   │   ├── darkStore.ts
+│       │   │   ├── flowStore.ts
+│       │   │   ├── flowsManagerStore.ts
+│       │   │   ├── foldersStore.tsx
+│       │   │   ├── globalVariablesStore
+│       │   │   │   ├── globalVariables.ts
+│       │   │   │   └── utils
+│       │   │   │       └── get-unavailable-fields.tsx
+│       │   │   ├── locationStore.ts
+│       │   │   ├── messagesStore.ts
+│       │   │   ├── shortcuts.ts
+│       │   │   ├── storeStore.ts
+│       │   │   ├── tweaksStore.ts
+│       │   │   ├── typesStore.ts
+│       │   │   └── utilityStore.ts
+│       │   ├── style
+│       │   │   ├── ag-theme-shadcn.css
+│       │   │   ├── applies.css
+│       │   │   ├── classes.css
+│       │   │   └── index.css
+│       │   ├── svg.d.ts
+│       │   ├── types
+│       │   │   ├── alerts
+│       │   │   │   └── index.ts
+│       │   │   ├── api
+│       │   │   │   └── index.ts
+│       │   │   ├── chat
+│       │   │   │   └── index.ts
+│       │   │   ├── components
+│       │   │   │   └── index.ts
+│       │   │   ├── contexts
+│       │   │   │   └── auth.ts
+│       │   │   ├── entities
+│       │   │   │   └── index.ts
+│       │   │   ├── flow
+│       │   │   │   └── index.ts
+│       │   │   ├── messages
+│       │   │   │   └── index.ts
+│       │   │   ├── store
+│       │   │   │   └── index.ts
+│       │   │   ├── tabs
+│       │   │   │   └── index.ts
+│       │   │   ├── templatesContext
+│       │   │   │   └── index.ts
+│       │   │   ├── utils
+│       │   │   │   ├── reactflowUtils.ts
+│       │   │   │   └── typeCheckingUtils.ts
+│       │   │   └── zustand
+│       │   │       ├── alert
+│       │   │       │   └── index.ts
+│       │   │       ├── dark
+│       │   │       │   └── index.ts
+│       │   │       ├── flow
+│       │   │       │   └── index.ts
+│       │   │       ├── flowIOStore
+│       │   │       │   └── index.ts
+│       │   │       ├── flowsManager
+│       │   │       │   └── index.ts
+│       │   │       ├── folders
+│       │   │       │   └── index.ts
+│       │   │       ├── globalVariables
+│       │   │       │   └── index.ts
+│       │   │       ├── location
+│       │   │       │   └── index.ts
+│       │   │       ├── messages
+│       │   │       │   └── index.ts
+│       │   │       ├── store
+│       │   │       │   └── index.ts
+│       │   │       ├── tweaks
+│       │   │       │   └── index.ts
+│       │   │       └── types
+│       │   │           └── index.ts
+│       │   └── utils
+│       │       ├── buildUtils.ts
+│       │       ├── parameterUtils.ts
+│       │       ├── reactflowUtils.ts
+│       │       ├── storeUtils.ts
+│       │       ├── styleUtils.ts
+│       │       └── utils.ts
+│       ├── start-nginx.sh
+│       ├── tailwind.config.mjs
+│       ├── tests
+│       │   ├── custom_component_full.ts
+│       │   ├── end-to-end
+│       │   │   ├── actionsMainPage.spec.ts
+│       │   │   ├── assets
+│       │   │   │   ├── ChatTest.json
+│       │   │   │   ├── chain.png
+│       │   │   │   ├── collection.json
+│       │   │   │   ├── flow.json
+│       │   │   │   ├── flow_group_test.json
+│       │   │   │   ├── flowtest.json
+│       │   │   │   └── test_file.txt
+│       │   │   ├── auto_login.spec.ts
+│       │   │   ├── basicExamples.spec.ts
+│       │   │   ├── chatInputOutput.spec.ts
+│       │   │   ├── chatInputOutputUser.spec.ts
+│       │   │   ├── codeAreaModalComponent.spec.ts
+│       │   │   ├── curl_api_generation.spec.ts
+│       │   │   ├── deleteComponentFlows.spec.ts
+│       │   │   ├── dragAndDrop.spec.ts
+│       │   │   ├── dropdownComponent.spec.ts
+│       │   │   ├── fileUploadComponent.spec.ts
+│       │   │   ├── filterEdge.spec.ts
+│       │   │   ├── floatComponent.spec.ts
+│       │   │   ├── flowPage.spec.ts
+│       │   │   ├── flowSettings.spec.ts
+│       │   │   ├── folders.spec.ts
+│       │   │   ├── generalBugs.spec.ts
+│       │   │   ├── globalVariables.spec.ts
+│       │   │   ├── group.spec.ts
+│       │   │   ├── inputComponent.spec.ts
+│       │   │   ├── inputListComponent.spec.ts
+│       │   │   ├── intComponent.spec.ts
+│       │   │   ├── keyPairListComponent.spec.ts
+│       │   │   ├── langflowShortcuts.spec.ts
+│       │   │   ├── logs.spec.ts
+│       │   │   ├── nestedComponent.spec.ts
+│       │   │   ├── promptModalComponent.spec.ts
+│       │   │   ├── python_api_generation.spec.ts
+│       │   │   ├── saveComponents.spec.ts
+│       │   │   ├── store.spec.ts
+│       │   │   ├── textAreaModalComponent.spec.ts
+│       │   │   ├── textInputOutput.spec.ts
+│       │   │   ├── toggleComponent.spec.ts
+│       │   │   ├── tweaks_test.spec.ts
+│       │   │   ├── twoEdges.spec.ts
+│       │   │   └── userSettings.spec.ts
+│       │   └── globalTeardown.ts
+│       ├── tsconfig.json
+│       └── vite.config.mts
+├── tests
+│   ├── conftest.py
+│   ├── data
+│   │   ├── BasicChatwithPromptandHistory.json
+│   │   ├── ChatInputTest.json
+│   │   ├── Openapi.json
+│   │   ├── TwoOutputsTest.json
+│   │   ├── Vector_store.json
+│   │   ├── WebhookTest.json
+│   │   ├── basic_example.json
+│   │   ├── complex_example.json
+│   │   ├── component.py
+│   │   ├── component_multiple_outputs.py
+│   │   ├── component_nested_call.py
+│   │   ├── component_with_templatefield.py
+│   │   ├── grouped_chat.json
+│   │   ├── one_group_chat.json
+│   │   └── vector_store_grouped.json
+│   ├── integration
+│   │   ├── __init__.py
+│   │   ├── astra
+│   │   │   ├── __init__.py
+│   │   │   └── test_astra_component.py
+│   │   └── utils.py
+│   ├── locust
+│   │   ├── locustfile.py
+│   │   └── names.txt
+│   ├── test_endpoints.py
+│   ├── test_schema.py
+│   ├── test_user.py
+│   ├── test_webhook.py
+│   └── unit
+│       ├── __init__.py
+│       ├── test_api_key.py
+│       ├── test_cache.py
+│       ├── test_cli.py
+│       ├── test_custom_component.py
+│       ├── test_data_class.py
+│       ├── test_data_components.py
+│       ├── test_database.py
+│       ├── test_files.py
+│       ├── test_frontend_nodes.py
+│       ├── test_graph.py
+│       ├── test_helper_components.py
+│       ├── test_initial_setup.py
+│       ├── test_kubernetes_secrets.py
+│       ├── test_loading.py
+│       ├── test_login.py
+│       ├── test_process.py
+│       ├── test_setup_superuser.py
+│       ├── test_template.py
+│       ├── test_validate_code.py
+│       └── text_experimental_components.py
+└── vercel.json
+
+494 directories, 1496 files
