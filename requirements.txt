@@ -3,3 +3,10 @@ requests
 pandas
 numpy
 nest_asyncio
+fastapi
+uvicorn
+jinja2
+sqlalchemy
+pydantic
+tortoise-orm
+aiofiles
