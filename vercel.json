@@ -2,19 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "src/**/*",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "build"
-      }
+      "src": "src/backend/main.py",
+      "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/"
+      "dest": "/src/backend/main.py"
     }
   ]
 }
-
-//este es un comentario
