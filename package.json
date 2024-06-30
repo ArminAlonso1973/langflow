@@ -2,6 +2,7 @@
     "name": "langflow",
     "version": "0.1.0",
     "scripts": {
+        "build": "echo 'No build script defined'",
         "start": "python src/backend/base/langflow/main.py"
     },
     "dependencies": {}
