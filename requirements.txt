@@ -3,6 +3,3 @@ uvicorn
 nest_asyncio
 loguru
 langflow
-requests
-pandas
-numpy
