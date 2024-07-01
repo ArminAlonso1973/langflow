@@ -5,3 +5,6 @@ services:
     plan: free
     buildCommand: ""
     startCommand: "python src/backend/base/langflow/main.py"
+    envVars:
+      - key: PORT
+        value: 8000

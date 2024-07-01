@@ -1,23 +1,25 @@
 import os
 from fastapi import FastAPI
-from langflow.main import setup_app
+from fastapi.staticfiles import StaticFiles
 from pathlib import Path
+from loguru import logger
+from langflow.api import router
 
 app = FastAPI()
 
-def setup_app_with_static(app: FastAPI):
-    backend_only = os.getenv("BACKEND_ONLY", "false").lower() == "true"
+def setup_app_with_static(app):
     static_files_dir = Path("static")
-
-    if not backend_only:
-        if not static_files_dir.exists():
-            raise RuntimeError(f"Static files directory does not exist: {static_files_dir}")
-        app.mount("/static", StaticFiles(directory=str(static_files_dir)), name="static")
-
-    setup_app(app)
+    if not static_files_dir.exists():
+        raise RuntimeError(f"Static files directory does not exist: {static_files_dir}")
+    app.mount("/static", StaticFiles(directory="static"), name="static")
+    logger.info(f"Setting up app with static files directory {static_files_dir}")
 
 setup_app_with_static(app)
 
+app.include_router(router)
+
 if __name__ == "__main__":
+    import nest_asyncio
     import uvicorn
+    nest_asyncio.apply()
     uvicorn.run(app, host="0.0.0.0", port=8000)
