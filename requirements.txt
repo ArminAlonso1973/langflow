@@ -1,7 +1,8 @@
 fastapi
-langchain
-pydantic
 uvicorn
 nest_asyncio
-loguru
 langflow
+loguru
+pandas
+numpy
+requests
