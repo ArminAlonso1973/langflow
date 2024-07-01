@@ -1,8 +1,8 @@
 fastapi
 uvicorn
 nest_asyncio
-langflow
 loguru
+langflow
+requests
 pandas
 numpy
-requests
