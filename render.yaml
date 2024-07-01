@@ -2,7 +2,6 @@ services:
   - type: web
     name: langflow
     env: python
-    region: oregon
     plan: free
-    buildCommand: "pip install -r requirements.txt"
+    buildCommand: ""
     startCommand: "python src/backend/base/langflow/main.py"
